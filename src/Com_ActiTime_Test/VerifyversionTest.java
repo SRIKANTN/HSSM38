@@ -1,5 +1,6 @@
 package Com_ActiTime_Test;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -17,9 +18,6 @@ public class VerifyversionTest extends BaseTest
 		lp.verifyTitle(etitle);
 		String aversion = lp.verifyVersion();
 		String eversion = ExcelData.getData(file_path, "TC03", 1, 0);
-		SoftAssert sa = new SoftAssert();
-		sa.assertEquals(aversion, eversion);
-		sa.assertAll();
+		Assert.assertEquals(aversion, eversion);
 	}
-
 }
